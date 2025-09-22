@@ -15,3 +15,30 @@ SELECT   nome, cognome FROM clienti WHERE anno_di_nascita = 1982
 ES3)
 
 SELECT * FROM fatture WHERE iva = 20
+
+
+ES4)
+
+
+SELECT * FROM prodotti WHERE in_produzione OR in_commercio = true AND EXTRACT( YEAR FROM data_attivazione ) = 2017
+
+
+ES5)
+
+SELECT  numero_fattura , clienti.nome , cognome  FROM fatture
+LEFT JOIN clienti  ON fatture.id_cliente = clienti.numero_cliente
+WHERE importo < 1000
+
+
+
+ES6)
+
+SELECT numero_fattura, importo, iva, data_fattura, fornitori.denominazione
+FROM fatture LEFT JOIN fornitori
+ON fatture.numero_fornitore = fornitori.numero_fornitore
+
+
+ES7)
+
+SELECT COUNT (numero_fattura) FROM fatture WHERE fatture.iva = 20 GROUP BY EXTRACT (YEAR FROM data_fattura)
+
