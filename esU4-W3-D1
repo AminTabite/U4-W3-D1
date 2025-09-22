@@ -1,0 +1,17 @@
+ES1) 
+
+
+SELECT * FROM clienti WHERE nome = 'Mario'
+
+
+ES2)
+
+
+SELECT   nome, cognome FROM clienti WHERE anno_di_nascita = 1982
+
+
+
+
+ES3)
+
+SELECT * FROM fatture WHERE iva = 20
